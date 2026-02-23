@@ -2,7 +2,7 @@
 
 set -xe
 
-PATHS="-I./include -./Llib"
+PATHS="-I./include -L./lib"
 
 GLOBAL_ARGS="main.c ./glad.c"
 

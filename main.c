@@ -45,7 +45,7 @@ int add_vert(float_da *verts,
         da_append(*verts, b);
 }
 
-int vodka(float_da *vertices, int_da *indices)
+int gen_something(float_da *vertices, int_da *indices)
 {
         const int seg = 100;
 
@@ -249,14 +249,10 @@ int main()
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
                 glUseProgram(shaderProgram);
-                glUniformMatrix4fv(proj_loc, 1, GL_FALSE, proj);
-                glUniformMatrix4fv(view_loc, 1, GL_FALSE, view);
-                glUniformMatrix4fv(model_loc, 1, GL_FALSE, model);
                 glBindVertexArray(VAO);
                 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
                 glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
                 glBindBuffer(GL_ARRAY_BUFFER,VBO);
-                // glDrawArrays(GL_TRIANGLE_FAN, 0, v_size/sizeof(float)/6);
                 glDrawElements(GL_TRIANGLE_STRIP, indices.size, GL_UNSIGNED_INT, 0);
 
                 SDL_GL_SwapWindow(window);

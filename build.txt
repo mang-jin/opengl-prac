@@ -1,0 +1,10 @@
+this is how I built SDL3-3.4.0 from source:
+
+cmake .. \
+  -DSDL_STATIC=ON \
+  -DSDL_SHARED=OFF \
+  -DSDL_ALSA=ON \
+  -DSDL_PULSEAUDIO=ON \
+  -DSDL_PIPEWIRE=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_FLAGS="-O2"
